@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+npm-debug.log
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build and dist
+dist/
+build/
+*.zip
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+.cache/
+
+# Dependencies
+yarn.lock
+package-lock.json
