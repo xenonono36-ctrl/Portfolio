@@ -213,7 +213,7 @@ a:hover {
    =========================== */
 
 .hero {
-    background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+    background: linear-gradient(135deg, #2d1b1b 0%, #1a1a1a 100%);
     padding: var(--spacing-2xl) 0;
     min-height: 80vh;
     display: flex;
@@ -230,21 +230,22 @@ a:hover {
 .hero-title {
     font-size: 4rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--white);
     margin-bottom: var(--spacing-sm);
     line-height: 1.1;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: var(--primary-red);
-    font-weight: 600;
+    color: var(--cream);
+    font-weight: 400;
     margin-bottom: var(--spacing-md);
+    letter-spacing: 0.8px;
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     max-width: 700px;
     margin-bottom: var(--spacing-xl);
@@ -257,45 +258,78 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.hero-cta .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.hero-cta .btn-secondary::before {
+    background: linear-gradient(to right, var(--primary-red), var(--dark-red));
+}
+
+.hero-cta .btn-secondary:hover::before {
+    opacity: 1;
+}
+
 /* ===========================
    BUTTONS
    =========================== */
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 15px 30px;
+    font-size: 0.95rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    transition: var(--transition);
+    letter-spacing: 1.2px;
+    border-radius: 0;
+    transition: all 0.3s ease;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--dark-red), var(--primary-red));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .btn-primary {
-    background-color: var(--primary-red);
+    background: linear-gradient(to right, var(--primary-red), var(--dark-red));
     color: var(--white);
     border-color: var(--primary-red);
 }
 
-.btn-primary:hover {
-    background-color: var(--dark-red);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(196, 30, 58, 0.3);
+.btn-primary::before {
+    background: linear-gradient(to right, var(--dark-red), var(--primary-red));
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--primary-red);
-    border-color: var(--primary-red);
+    background: linear-gradient(to right, rgba(196, 30, 58, 0.1), rgba(139, 0, 0, 0.1));
+    color: var(--white);
+    border-color: var(--white);
 }
 
-.btn-secondary:hover {
-    background-color: var(--primary-red);
-    color: var(--white);
-    transform: translateY(-2px);
+.btn-secondary::before {
+    background: linear-gradient(to right, var(--primary-red), var(--dark-red));
+}
+
+.btn-secondary:hover::before {
+    opacity: 1;
 }
 
 /* ===========================
@@ -308,7 +342,7 @@ a:hover {
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-xl);
-    border-top: 2px solid var(--border-light);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .info-item {
@@ -320,15 +354,16 @@ a:hover {
 .info-label {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .info-value {
     font-size: 1rem;
-    color: var(--text-dark);
-    font-weight: 600;
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* ===========================
