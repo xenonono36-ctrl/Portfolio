@@ -12,7 +12,7 @@ Portfolio/
 └── README.md           # This file
 ```
 
-## 🎨 Design Features
+## 🎨 Design Features 
 
 ### Color Scheme
 - **Primary Red**: `#c41e3a` - Main accent color
@@ -129,7 +129,7 @@ Add new `<article class="project-card">` blocks in the projects section:
 - Lazy loading for images
 - Debounced resize handlers
 - Optimized animations
-- No external dependencies (except Google Fonts)
+- No external dependencies (except Google Fonts).
 
 ## 🔗 Links Included
 
